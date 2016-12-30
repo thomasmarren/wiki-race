@@ -1,3 +1,5 @@
+document.getElementById('from-to').innerHTML = "Racing from " + raceState.start + " to " + raceState.finish
+
 var topic = raceState.start
 
 fetch(`http://localhost:3000/race/article/${topic}`)

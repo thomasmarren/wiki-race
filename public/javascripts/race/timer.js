@@ -5,7 +5,6 @@ function timeRemaining(startTime){
   var seconds = Math.floor( (time/1000) % 60 );
   var minutes = Math.floor( (time/1000/60) % 60 );
   return {
-    'total': time,
     'minutes': minutes,
     'seconds': seconds
   };
@@ -16,10 +15,6 @@ function buildTimer(id, startTime){
   var timeInterval = setInterval(function(){
     var time = timeRemaining(startTime);
     clock.innerHTML = time.minutes + ":"  + time.seconds;
-    if(time.total<=0){
-      clearInterval(timeInterval);
-      document.getElementById('clockdiv').innerHTML = "Why you looking here? Come cuddle"
-    }
   },1000);
 }
 

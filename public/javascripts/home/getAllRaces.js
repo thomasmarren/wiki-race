@@ -23,8 +23,15 @@ fetch("http://localhost:3000/home/races")
       clicks.innerHTML = `<p>${race.clicks}</p>`
 
       var speed = row.insertCell()
-      speed.innerHTML = `<p>${race.speed}</p>`
+      speed.innerHTML = `<p>${displaySpeed(race.speed)}</p>`
+
 
   })
+
+  function displaySpeed(speed){
+    var mins = Math.floor( (speed/1000/60) % 60 );
+    var secs = Math.floor( (speed/1000) % 60 );
+    return mins + ' mins ' + secs + ' secs'
+  }
 
 })
