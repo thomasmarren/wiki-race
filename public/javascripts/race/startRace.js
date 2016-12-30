@@ -1,4 +1,6 @@
-fetch('http://localhost:3000/article')
+var topic = raceState.start
+
+fetch(`http://localhost:3000/race/article/${topic}`)
 .then( response => {
   return response.json()
 }).then( response => {

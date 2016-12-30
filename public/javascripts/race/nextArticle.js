@@ -1,5 +1,7 @@
 function nextArticle(){
 
+  raceState.clicks += 1
+
   document.getElementById('article-title').innerHTML = "<p>Loading Article...</p>"
   document.getElementById('article').innerHTML = ""
 
@@ -8,7 +10,7 @@ function nextArticle(){
   // var topic = link.split("/").slice(-1)[0]
   var topic = 'test'
 
-  fetch(`http://localhost:3000/article/${topic}`)
+  fetch(`http://localhost:3000/race/article/${topic}`)
   .then( response => {
     return response.json()
   }).then( response => {
