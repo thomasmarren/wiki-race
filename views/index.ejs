@@ -2,20 +2,13 @@
 <html>
   <head>
     <title>Wiki Race</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
-    <a href="/home">Home page</a>
-
-    <h1>Wiki Race</h1>
-    <h2>Links hit:</h2>
-    <ul id="links-hit"></ul>
-    <h2 id="article-title">
-    </h2>
-    <div id="article"></div>
+    <h1>Index Page</h1>
+    <form onsubmit="storePlayer()">
+      <input type="text" name="player" value="">
+      <input type="submit" value="Let's Race">
+    </form>
   </body>
-  <script src="javascripts/completeRace.js"></script>
-  <script src="javascripts/nextArticle.js"></script>
-  <script src="javascripts/index.js"></script>
+  <script src="javascripts/storePlayer.js"></script>
 </html>

@@ -1,6 +1,5 @@
 require('dotenv').config();
 var express = require('express');
-var path = require('path')
 var router = express.Router();
 var request = require('request');
 var db = require('../queries');

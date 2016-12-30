@@ -9,7 +9,8 @@ CREATE TABLE races (
   start TEXT,
   finish TEXT,
   clicks INT,
-  speed INT
+  speed INT,
+  raceDate TIMESTAMP NOT NULL DEFAULT(now())
 );
 
 INSERT INTO races (player, start, finish, clicks, speed)

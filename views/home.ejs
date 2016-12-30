@@ -5,7 +5,8 @@
     <title></title>
   </head>
   <body>
-    <h1>Hello from home page</h1>
+    <h1>Welcome to Wiki Race</h1>
+    <h1 id="current-player"></h1>
 
     <table id="races-table">
       <tr>
@@ -20,5 +21,8 @@
     </table>
 
   </body>
+  <script type="text/javascript">
+    document.getElementById('current-player').innerHTML = sessionStorage.getItem('wiki-race-player')
+  </script>
   <script src="javascripts/getAllRaces.js"></script>
 </html>
