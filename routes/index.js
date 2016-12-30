@@ -1,5 +1,6 @@
 require('dotenv').config();
 var express = require('express');
+var path = require('path')
 var router = express.Router();
 var request = require('request');
 var db = require('../queries');
@@ -54,8 +55,6 @@ router.get('/article', function(req, res, next) {
   res.json({title: 'Title', content: "<p>Content<a onclick='nextArticle()'>Next article</a></p>"})
 
 });
-
-router.get('/races', db.getAllRaces)
 
 router.post('/completeRace', db.createRace)
 
