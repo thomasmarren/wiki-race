@@ -5,13 +5,13 @@ function nextArticle(){
 
   var link = event.currentTarget.dataset.id
 
-  var topic = link.split("/").slice(-1)[0]
+  // var topic = link.split("/").slice(-1)[0]
+  var topic = 'test'
 
   fetch(`http://localhost:3000/article/${topic}`)
   .then( response => {
     return response.json()
   }).then( response => {
-    debugger
     var content = response.content.replace(/href/g, "onclick='nextArticle()' href='#' data-id")
     var newLink = document.createElement('li')
     newLink.innerHTML = response.title

@@ -11,23 +11,25 @@ router.get('/', function(req, res, next) {
 
 router.get('/article/:topic', function(req, res, next) {
 
-  var topic = req.params.topic
+  // var topic = req.params.topic
+  //
+  // var options = {
+  //   url: `https://mercury.postlight.com/parser?url=https://en.wikipedia.org/wiki/${topic}`,
+  //   headers: {
+  //     'x-api-key': process.env.MERCURY_API_KEY
+  //   }
+  // };
+  //
+  // function callback(error, response, body) {
+  //   if (!error && response.statusCode == 200) {
+  //     var article = JSON.parse(body);
+  //     res.json(article);
+  //   }
+  // }
+  //
+  // request(options, callback);
 
-  var options = {
-    url: `https://mercury.postlight.com/parser?url=https://en.wikipedia.org/wiki/${topic}`,
-    headers: {
-      'x-api-key': process.env.MERCURY_API_KEY
-    }
-  };
-
-  function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      var article = JSON.parse(body);
-      res.json(article);
-    }
-  }
-
-  request(options, callback);
+  res.json({title: 'Next Article', content: "<p>More Content</p><a onclick='nextArticle()'>Next article</a>"})
 
 });
 
@@ -49,7 +51,7 @@ router.get('/article', function(req, res, next) {
   //
   // request(options, callback);
 
-  res.json({title: 'Title', content: "<p>Content</p>"})
+  res.json({title: 'Title', content: "<p>Content<a onclick='nextArticle()'>Next article</a></p>"})
 
 });
 
