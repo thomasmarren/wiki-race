@@ -15,12 +15,27 @@ function getAllRaces(req, res, next) {
         .json({
           status: 'success',
           data: data,
-          message: 'Retrieved ALL races'
+          message: 'Retrieved all races'
         });
     })
     .catch(function (err) {
       return next(err);
     });
+}
+
+function getRandomRace(req, res, next){
+  db.any('SELECT * FROM races ORDER BY random() LIMIT 1;')
+  .then(function(data){
+    res.status(200)
+      .json({
+        status: 'success',
+        data: data,
+        message: 'Retrieved random race'
+      })
+  })
+  .catch(function (err) {
+    return next(err);
+  });
 }
 
 function createRace(req, res, next) {
@@ -44,5 +59,6 @@ function createRace(req, res, next) {
 
 module.exports = {
   getAllRaces: getAllRaces,
+  getRandomRace: getRandomRace,
   createRace: createRace
 };

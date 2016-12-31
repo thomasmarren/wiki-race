@@ -8,11 +8,21 @@
     <h1>Welcome to Wiki Race</h1>
     <h1 id="current-player"></h1>
 
-    <form onsubmit="storeRace()">
+    <form onsubmit="storeRandomRace()">
+      <p id="random-start"></p>
+      <p id="random-finish"></p>
+      <input type="submit" value="Race">
+    </form>
+    <button onclick="newRandomRace()">New Race</button>
+
+    <br>
+    <br>
+
+    <form onsubmit="storeNewRace()">
       <label for="">From</label>
-      <input type="text">
+      <input id="user-start" type="text">
       <label for="">To</label>
-      <input type="text">
+      <input id="user-finish" type="text">
       <input type="submit" name="" value="Race">
     </form>
 
@@ -35,5 +45,6 @@
     document.getElementById('current-player').innerHTML = sessionStorage.getItem('wiki-race-player')
   </script>
   <script src="javascripts/home/getAllRaces.js"></script>
-  <script src="javascripts/home/storeRace.js"></script>
+  <script src="javascripts/home/randomRace.js"></script>
+  <script src="javascripts/home/storeNewRace.js"></script>
 </html>

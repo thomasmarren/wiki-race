@@ -11,4 +11,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/races', db.getAllRaces)
 
+router.get('/randomRace', db.getRandomRace)
+
 module.exports = router;
