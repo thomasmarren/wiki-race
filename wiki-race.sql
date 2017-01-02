@@ -14,4 +14,17 @@ CREATE TABLE races (
 );
 
 INSERT INTO races (player, start, finish, clicks, speed)
-  VALUES ('Tom', 'Ficus rubiginosa', 'Payphone', 10, 30000);
+  VALUES (
+    'Tom',
+    'Ficus_rubiginosa',
+    'Payphone',
+    10,
+    30000);
+
+INSERT INTO races (player, start, finish, clicks, speed)
+  VALUES (
+    'Tom',
+    'California',
+    'New_York_City',
+    10,
+    30000);

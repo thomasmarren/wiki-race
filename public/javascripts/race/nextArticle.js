@@ -12,8 +12,7 @@ function nextArticle(){
     document.getElementById('article-title').innerHTML = "<p>Loading Article...</p>"
     document.getElementById('article').innerHTML = ""
 
-    // var topic = link.split("/").slice(-1)[0]
-    var topic = 'test'
+    var topic = link.split("/").slice(-1)[0]
 
     fetch(`http://localhost:3000/race/article/${topic}`)
     .then( response => {

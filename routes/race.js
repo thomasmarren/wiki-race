@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 router.get('/article/:topic', function(req, res, next) {
 
   var topic = req.params.topic
-  //
+
   // var options = {
   //   url: `https://mercury.postlight.com/parser?url=https://en.wikipedia.org/wiki/${topic}`,
   //   headers: {
