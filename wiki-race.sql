@@ -15,7 +15,7 @@ CREATE TABLE races (
 
 INSERT INTO races (player, start, finish, clicks, speed)
   VALUES (
-    'Tom',
+    'TOM',
     'Ficus_rubiginosa',
     'Payphone',
     10,
@@ -23,7 +23,39 @@ INSERT INTO races (player, start, finish, clicks, speed)
 
 INSERT INTO races (player, start, finish, clicks, speed)
   VALUES (
-    'Tom',
+    'TOM',
+    'California',
+    'New_York_City',
+    10,
+    30000);
+
+INSERT INTO races (player, start, finish, clicks, speed)
+  VALUES (
+    'MAC',
+    'California',
+    'New_York_City',
+    10,
+    30000);
+
+INSERT INTO races (player, start, finish, clicks, speed)
+  VALUES (
+    'BEY',
+    'California',
+    'New_York_City',
+    10,
+    30000);
+
+INSERT INTO races (player, start, finish, clicks, speed)
+  VALUES (
+    'PAC',
+    'California',
+    'New_York_City',
+    10,
+    30000);
+
+INSERT INTO races (player, start, finish, clicks, speed)
+  VALUES (
+    'MNM',
     'California',
     'New_York_City',
     10,

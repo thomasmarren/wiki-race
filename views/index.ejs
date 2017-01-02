@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/stylesheets/index.css">
     <title>Wiki Race</title>
   </head>
   <body>
-    <h1>Index Page</h1>
+    <h1>Wiki Race</h1>
+    <h4>Enter your initials</h4>
     <form onsubmit="storePlayer()">
-      <input type="text" name="player" value="">
+      <input id="player" type="text" name="player" placeholder="---" autofocus>
+      <br>
+      <br>
       <input type="submit" value="Let's Race">
     </form>
   </body>
   <script src="javascripts/index/storePlayer.js"></script>
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('player').addEventListener('input', function(){
+      if(this.value.length === 4){
+        this.value = this.value.slice(0,3)
+      } else{
+        this.value = this.value.toUpperCase()
+      }
+    })
+  })
+  </script>
 </html>
