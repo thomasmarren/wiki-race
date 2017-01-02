@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/stylesheets/master.css">
     <title>Wiki Race</title>
   </head>
   <body>
 
-    <a href="/home">New Race</a>
+    <div id="race">
 
-    <h1>Wiki Race</h1>
+      <a href="/home">New Race</a>
 
-    <h2 id="from-to">
+      <h1>Wiki Race</h1>
 
-    <h3 id="timer"></h3>
+      <h2 id="from-to"></h2>
 
-    <h2>Links hit:</h2>
-    <ul id="links-hit"></ul>
-    <h2 id="article-title">
-    </h2>
-    <div id="article"></div>
+      <h3 id="timer"></h3>
+
+      <h2>Links hit:</h2>
+      <ul id="links-hit"></ul>
+      <h2 id="article-title">
+      </h2>
+      <div id="article"></div>
+    </div>
+
+    <div id="race-results" class="hidden">
+      <h1>Race results</h1>
+      <h2 id="from-to-results"></h2>
+      <ul id="links-hit-results">
+
+      </ul>
+      <p id="clicks-results"></p>
+      <p id="speed-results"></p>
+      <a href="/home">New Race</a>
+      <a href="" onclick="tryAgain()">Try again?</a>
+    </div>
+
   </body>
   <script src="javascripts/race/raceState.js"></script>
   <script src="javascripts/race/nextArticle.js"></script>
   <script src="javascripts/race/startRace.js"></script>
   <script src="javascripts/race/timer.js"></script>
+  <script src="javascripts/race/tryAgain.js"></script>
 </html>
