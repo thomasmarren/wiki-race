@@ -1,4 +1,6 @@
 document.getElementById('from-to').innerHTML = "Racing from " + raceState.startDisplay + " to " + raceState.finishDisplay
+document.getElementById('article-title').innerHTML = "<p>Loading Article...</p>"
+document.getElementById('article').innerHTML = ""
 
 var topic = raceState.start
 

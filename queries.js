@@ -9,7 +9,7 @@ var connectionString = 'postgres://localhost:5432/wiki_race';
 var db = pgp(connectionString);
 
 function getAllRaces(req, res, next) {
-  db.any('select * from races')
+  db.any('SELECT * FROM races JOIN contests ON races.contest_id = contests.id')
     .then(function (data) {
       res.status(200)
         .json({
@@ -24,7 +24,7 @@ function getAllRaces(req, res, next) {
 }
 
 function getRandomRace(req, res, next){
-  db.any('SELECT * FROM races ORDER BY random() LIMIT 1;')
+  db.any('SELECT * FROM contests ORDER BY random() LIMIT 1')
   .then(function(data){
     res.status(200)
       .json({
@@ -38,27 +38,60 @@ function getRandomRace(req, res, next){
   });
 }
 
+// function createContest(req, res, next){
+//
+//   db.any(
+//     `SELECT * FROM contests
+//     WHERE start = '${req.body.start}' AND finish = '${req.body.finish}'`
+//   ).then( data => {
+//     console.log(data)
+//   })
+//
+//   db.none(
+//     'insert into contests (start, finish)' +
+//     'values(${start}, ${finish})',
+//     req.body
+//   ).then(function () {
+//       res.status(200)
+//         .json({
+//           status: 'success',
+//           message: 'Created contest'
+//         });
+//     })
+//     .catch(function (err) {
+//       return next(err);
+//     });
+//
+// }
+
 function createRace(req, res, next) {
-  console.log(req.body)
   req.body.clicks = parseInt(req.body.clicks);
   req.body.speed = parseInt(req.body.speed);
-  db.none('insert into races(player, start, finish, clicks, speed)' +
-      'values(${player}, ${start}, ${finish}, ${clicks}, ${speed})',
-    req.body)
-    .then(function () {
-      res.status(200)
-        .json({
-          status: 'success',
-          message: 'Created race'
-        });
-    })
-    .catch(function (err) {
-      return next(err);
-    });
+
+  db.any(
+    `SELECT * FROM contests
+    WHERE start = '${req.body.start}' AND finish = '${req.body.finish}'`
+  ).then( data => {
+    db.none(
+      `insert into races (player, contest_id, clicks, speed)
+      values('${req.body.player}', '${data[0].id}', '${req.body.clicks}', '${req.body.speed}')`
+    ).then(function () {
+        res.status(200)
+          .json({
+            status: 'success',
+            message: 'Created race'
+          });
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+
+      })
 }
 
 module.exports = {
   getAllRaces: getAllRaces,
   getRandomRace: getRandomRace,
+  createContest: createContest,
   createRace: createRace
 };

@@ -2,10 +2,8 @@ function nextArticle(){
 
   raceState.clicks += 1
 
-  var link = event.currentTarget.dataset.id.split("/").slice(-1)[0]
-  // var link = 'Payphone'
-
-  debugger
+  // var link = event.currentTarget.dataset.id.split("/").slice(-1)[0]
+  var link = 'Payphone'
 
   if (link === raceState.finish){
     completeRace()
@@ -75,7 +73,7 @@ function completeRace(){
     document.getElementById('race').classList += 'hidden'
     document.getElementById('race-results').classList -= 'hidden'
 
-    document.getElementById('from-to-results').innerHTML = "Your results for " + raceState.start + " to " + raceState.finish
+    document.getElementById('from-to-results').innerHTML = "Your results for " + raceState.startDisplay + " to " + raceState.finishDisplay
 
     document.getElementById('links-hit-results').innerHTML = '<ul>'
     raceState.linksHit.forEach( link => {

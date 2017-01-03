@@ -14,25 +14,27 @@ router.get('/article/:topic', function(req, res, next) {
 
   var topic = req.params.topic
 
-  var options = {
-    url: `https://mercury.postlight.com/parser?url=https://en.wikipedia.org/wiki/${topic}`,
-    headers: {
-      'x-api-key': process.env.MERCURY_API_KEY
-    }
-  };
+  // var options = {
+  //   url: `https://mercury.postlight.com/parser?url=https://en.wikipedia.org/wiki/${topic}`,
+  //   headers: {
+  //     'x-api-key': process.env.MERCURY_API_KEY
+  //   }
+  // };
+  //
+  // function callback(error, response, body) {
+  //   if (!error && response.statusCode == 200) {
+  //     var article = JSON.parse(body);
+  //     res.json(article);
+  //   }
+  // }
+  //
+  // request(options, callback);
 
-  function callback(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      var article = JSON.parse(body);
-      res.json(article);
-    }
-  }
-
-  request(options, callback);
-
-  // res.json({title: topic, content: "<p>Content</p><a onclick='nextArticle()'>Next article</a>"})
+  res.json({title: topic, content: "<p>Content</p><a onclick='nextArticle()'>Next article</a>"})
 
 });
+
+router.post('/createContest', db.createContest)
 
 router.post('/completeRace', db.createRace)
 
