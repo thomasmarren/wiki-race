@@ -14,10 +14,10 @@ fetch("http://localhost:3000/home/races")
       player.innerHTML = `<p>${race.player}</p>`
 
       var start = row.insertCell()
-      start.innerHTML = `<p>${race.start}</p>`
+      start.innerHTML = `<p>${displayLink(race.start)}</p>`
 
       var finish = row.insertCell()
-      finish.innerHTML = `<p>${race.finish}</p>`
+      finish.innerHTML = `<p>${displayLink(race.finish)}</p>`
 
       var clicks = row.insertCell()
       clicks.innerHTML = `<p>${race.clicks}</p>`
@@ -27,6 +27,10 @@ fetch("http://localhost:3000/home/races")
 
 
   })
+
+  function displayLink(link){
+    return link.split('_').join(' ')
+  }
 
   function displaySpeed(speed){
     var mins = Math.floor( (speed/1000/60) % 60 );

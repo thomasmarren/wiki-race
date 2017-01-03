@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  margin-top: 40%
+  margin-top: 20%
 }
 
 h1 {
@@ -11,8 +11,28 @@ input:focus {
   outline-width: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 #player {
   border: none;
   font-size: 3em;
   text-align: center;
+}
+
+#race-button {
+  padding: 10px;
+  background: none;
+  border: solid 1px black;
+  font-weight: bold;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+#race-button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: solid 1px black;
 }

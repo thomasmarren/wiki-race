@@ -2,8 +2,10 @@ function nextArticle(){
 
   raceState.clicks += 1
 
-  // var link = event.currentTarget.dataset.id
-  var link = 'Payphone'
+  var link = event.currentTarget.dataset.id.split("/").slice(-1)[0]
+  // var link = 'Payphone'
+
+  debugger
 
   if (link === raceState.finish){
     completeRace()
