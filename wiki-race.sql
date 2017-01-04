@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS wiki_race;
-CREATE DATABASE wiki_race;
-
-\c wiki_race;
+-- DROP DATABASE IF EXISTS wiki_race;
+-- CREATE DATABASE wiki_race;
+--
+-- \c wiki_race;
 
 CREATE TABLE races (
   ID SERIAL PRIMARY KEY,
