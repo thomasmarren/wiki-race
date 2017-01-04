@@ -6,7 +6,7 @@ var options = {
 
 var pgp = require('pg-promise')(options);
 // var connectionString = 'postgres://localhost:5432/wiki_race';
-var connectionString = '/var/run/postgresql/.s.PGSQL.5432';
+var connectionString = ENV['DATABASE_URL'];
 var db = pgp(connectionString);
 
 function getAllRaces(req, res, next) {
