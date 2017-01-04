@@ -39,7 +39,7 @@ function getRandomRace(req, res, next){
 }
 
 function getSpecificRace(req, res, next){
-  
+
   var start = req.params.start
   var finish = req.params.finish
 
