@@ -3,7 +3,8 @@ function storeNewRace(){
   var start = document.getElementById('user-start').value
   var finish = document.getElementById('user-finish').value
 
-  fetch("http://localhost:3000/race/createContest",
+  // fetch("http://localhost:3000/race/createContest",
+  fetch("https://wiki-race.herokuapp.com/race/createContest",
   {
     method: "POST",
     body: JSON.stringify({

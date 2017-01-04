@@ -4,7 +4,8 @@ document.getElementById('article').innerHTML = ""
 
 var topic = raceState.start
 
-fetch(`http://localhost:3000/race/article/${topic}`)
+// fetch(`http://localhost:3000/race/article/${topic}`)
+fetch(`https://wiki-race.herokuapp.com/race/article/${topic}`)
 .then( res => {
   return res.json()
 }).then( res => {

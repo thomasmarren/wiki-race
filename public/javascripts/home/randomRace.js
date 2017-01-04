@@ -1,7 +1,8 @@
 newRandomRace()
 
 function newRandomRace(){
-  fetch("http://localhost:3000/home/randomRace")
+  // fetch("http://localhost:3000/home/randomRace")
+  fetch("https://wiki-race.herokuapp.com/home/randomRace")
   .then(function(res){
     return res.json()
   })
