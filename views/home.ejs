@@ -2,18 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/stylesheets/master.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+
     <title>Wiki Race</title>
   </head>
   <body>
     <h1>Welcome to Wiki Race</h1>
     <h1 id="current-player"></h1>
 
-    <form onsubmit="storeRandomRace()">
-      <p id="random-start"></p>
-      <p id="random-finish"></p>
-      <input type="submit" value="Race">
-    </form>
-    <button onclick="newRandomRace()">New Race</button>
+    <div id="random-links">
+      <a id="random-start"></a>
+      <p id="to"></p>
+      <a id="random-finish"></a>
+      <br>
+      <br>
+      <button class="race-button random-race-button" onclick="storeRandomRace()">Race!</button>
+      <button class="race-button random-race-button" onclick="newRandomRace()">Another one</button>
+    </div>
 
     <br>
     <br>
@@ -32,8 +39,8 @@
     <table id="results-table">
       <tr>
         <th>Player</th>
-        <th>Starting Link</th>
-        <th>Finishing Link</th>
+        <th>From</th>
+        <th>To</th>
         <th>Clicks</th>
         <th>Speed</th>
       </tr>

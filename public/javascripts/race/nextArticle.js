@@ -73,16 +73,18 @@ function completeRace(){
     document.getElementById('race').classList += 'hidden'
     document.getElementById('race-results').classList -= 'hidden'
 
-    document.getElementById('from-to-results').innerHTML = "Your results for " + raceState.startDisplay + " to " + raceState.finishDisplay
+    document.getElementById('from-to-results').innerHTML = raceState.startDisplay + " to " + raceState.finishDisplay
 
     document.getElementById('links-hit-results').innerHTML = '<ul>'
+    document.getElementById('links-hit-results').innerHTML += `<li>${raceState.startDisplay}</li>`
     raceState.linksHit.forEach( link => {
       document.getElementById('links-hit-results').innerHTML += `<li>${link}</li>`
     })
+    document.getElementById('links-hit-results').innerHTML += `<li>${raceState.finishDisplay}</li>`
     document.getElementById('links-hit-results').innerHTML += '</ul>'
 
-    document.getElementById('clicks-results').innerHTML = `<p>${raceState.clicks} links clicked</p>`
-    document.getElementById('speed-results').innerHTML = `<p>${displaySpeed(raceState.startTime)}</p>`
+    document.getElementById('clicks-results').innerHTML = `${raceState.clicks}`
+    document.getElementById('speed-results').innerHTML = `${displaySpeed(raceState.startTime)}`
   }
 
   function calculateSpeed(startTime){
@@ -93,7 +95,7 @@ function completeRace(){
     var speed = calculateSpeed(startTime)
     var mins = Math.floor( (speed/1000/60) % 60 );
     var secs = Math.floor( (speed/1000) % 60 );
-    return mins + ' mins ' + secs + ' secs'
+    return mins + ' : ' + secs
   }
 
 }

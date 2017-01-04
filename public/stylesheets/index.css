@@ -21,18 +21,16 @@ input:focus {
   text-align: center;
 }
 
-#race-button {
+.race-button {
+  cursor: pointer;
+  color: blue;
   padding: 10px;
   background: none;
-  border: solid 1px black;
-  font-weight: bold;
+  border: none;
   font-size: 150%;
   text-transform: uppercase;
 }
 
-#race-button:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  border: solid 1px black;
+.race-button:hover {
+  text-decoration: underline;
 }

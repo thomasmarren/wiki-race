@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/stylesheets/master.css">
     <link rel="stylesheet" href="/stylesheets/race.css">
     <title>Wiki Race</title>
   </head>
@@ -24,13 +25,22 @@
     </div>
 
     <div id="race-results" class="hidden">
-      <h1>Race results</h1>
-      <h2 id="from-to-results"></h2>
+      <h1>You Won!</h1>
+      <h2>Race results</h2>
+      <h3 id="from-to-results"></h3>
       <ul id="links-hit-results">
 
       </ul>
-      <p id="clicks-results"></p>
-      <p id="speed-results"></p>
+      <div class="links-speed">
+        <p>Clicks</p>
+        <p id="clicks-results"></p>
+      </div>
+      <div class="links-speed">
+        <p>Time</p>
+        <p id="speed-results"></p>
+      </div>
+      <br>
+      <br>
       <a href="/home">New Race</a>
       <a href="" onclick="tryAgain()">Try again?</a>
     </div>

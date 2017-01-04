@@ -1,0 +1,62 @@
+body {
+  text-align: center;
+}
+
+#random-links p {
+  display: inline;
+}
+
+#random-start, #random-finish {
+  color: blue;
+  text-decoration: none;
+}
+
+#random-start:hover, #random-finish:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#results-table {
+  width: 1000px;
+  margin: 0px auto;
+}
+
+.random-race-button {
+  color: blue;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.random-race-button:focus {
+  outline-width: 0;
+}
+
+table a {
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+th {
+  border-bottom: solid 1px black;
+}
+
+tr:nth-child(even) {
+  background-color: #cedff2;
+}
+
+.table-race-buttons {
+  color: blue;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.table-race-buttons:hover {
+  text-decoration: underline;
+}

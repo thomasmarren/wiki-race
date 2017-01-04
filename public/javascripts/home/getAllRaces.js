@@ -16,10 +16,10 @@ fetch("http://localhost:3000/home/races")
       player.innerHTML = `<p>${race.player}</p>`
 
       var start = row.insertCell()
-      start.innerHTML = `<p id='${race.start}' class='${counter}'>${displayLink(race.start)}</p>`
+      start.innerHTML = `<a id='${race.start}' class='${counter}' href='javascript:none' onclick="window.open('https://www.wikipedia.org/wiki/${race.start}', 'newwindow', 'width=800, height=450'); return false;">${displayLink(race.start)}</a>`
 
       var finish = row.insertCell()
-      finish.innerHTML = `<p id='${race.finish}' class='${counter}'>${displayLink(race.finish)}</p>`
+      finish.innerHTML = `<a id='${race.finish}' class='${counter}' href='javascript:none' onclick="window.open('https://www.wikipedia.org/wiki/${race.finish}', 'newwindow', 'width=800, height=450'); return false;">${displayLink(race.finish)}</a>`
 
       var clicks = row.insertCell()
       clicks.innerHTML = `<p>${race.clicks}</p>`
@@ -28,7 +28,7 @@ fetch("http://localhost:3000/home/races")
       speed.innerHTML = `<p>${displaySpeed(race.speed)}</p>`
 
       var button = row.insertCell()
-      button.innerHTML = `<button onclick='storeRecentRace(${counter})'>Race</button>`
+      button.innerHTML = `<button class="table-race-buttons" onclick='storeRecentRace(${counter})'>Race!</button>`
 
       counter += 1
 

@@ -36,44 +36,191 @@ INSERT INTO contests (start, finish)
     'Pac-Man'
   );
 
-INSERT INTO races (player, contest_id, clicks, speed)
+INSERT INTO contests (start, finish)
   VALUES (
-    'TOM',
-    1,
-    10,
-    30000);
+    'Metal',
+    'Javelin_throw'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'MiniDisc',
+    'Kenya'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'Tourism',
+    'Cryptography'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'Copyright_infringement',
+    'Amazon_rainforest'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'Thriller_film',
+    'Human_Rights_Watch'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'War_crime',
+    'Billboard_(magazine)'
+  );
+
+INSERT INTO contests (start, finish)
+  VALUES (
+    'Nick_Jonas',
+    'Preakness_Stakes'
+  );
 
 INSERT INTO races (player, contest_id, clicks, speed)
   VALUES (
     'TOM',
-    2,
-    10,
-    30000);
-
-INSERT INTO races (player, contest_id, clicks, speed)
-  VALUES (
-    'MAC',
-    3,
-    10,
-    30000);
-
-INSERT INTO races (player, contest_id, clicks, speed)
-  VALUES (
-    'BEY',
     1,
-    10,
-    30000);
+    23,
+    4530000);
 
 INSERT INTO races (player, contest_id, clicks, speed)
   VALUES (
-    'PAC',
+    'BFS',
     2,
-    10,
-    30000);
+    45,
+    5430000);
 
 INSERT INTO races (player, contest_id, clicks, speed)
   VALUES (
-    'MNM',
+    'ASD',
+    4,
+    31,
+    3430000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'VAR',
+    6,
+    43,
+    430000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'ARG',
+    4,
+    21,
+    430000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'VEV',
+    7,
+    32,
+    1230000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'AER',
+    4,
+    43,
+    330000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'THB',
+    2,
+    23,
+    340000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'ABR',
+    4,
+    32,
+    3320000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'SSE',
+    2,
+    43,
+    330000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'YBW',
+    9,
+    23,
+    3230000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'AST',
+    8,
+    34,
+    320000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'WRT',
+    5,
+    43,
+    330000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'BWR',
     3,
-    10,
-    30000);
+    23,
+    330000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'YTE',
+    2,
+    43,
+    320000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'NRW',
+    4,
+    12,
+    310000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'MNS',
+    4,
+    32,
+    430000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'RTE',
+    7,
+    32,
+    230000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'BWR',
+    5,
+    32,
+    330000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'NHD',
+    4,
+    43,
+    230000);
+
+INSERT INTO races (player, contest_id, clicks, speed)
+  VALUES (
+    'WER',
+    7,
+    32,
+    330000);
