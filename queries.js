@@ -9,7 +9,7 @@ var connectionString = 'postgres://localhost:5432/wiki_race';
 var db = pgp(connectionString);
 
 function getAllRaces(req, res, next) {
-  db.any('SELECT * FROM races JOIN contests ON races.contest_id = contests.id')
+  db.any('SELECT * FROM races JOIN contests ON races.contest_id = contests.id ORDER BY racedate DESC LIMIT 10')
     .then(function (data) {
       res.status(200)
         .json({
@@ -36,6 +36,33 @@ function getRandomRace(req, res, next){
   .catch(function (err) {
     return next(err);
   });
+}
+
+function getSpecificRace(req, res, next){
+  
+  var start = req.params.start
+  var finish = req.params.finish
+
+  db.any(
+    `SELECT * FROM contests
+    WHERE start = '${start}' AND finish = '${finish}'`
+  ).then( data => {
+    console.log(data)
+    db.any(
+      `SELECT * FROM races WHERE race.contest_id = ${data[0].id}`
+    ).then(function (data) {
+        res.status(200)
+          .json({
+            status: 'success',
+            data: data,
+            message: 'Found race'
+          });
+      })
+      .catch(function (err) {
+        return next(err);
+      });
+
+      })
 }
 
 // function createContest(req, res, next){
@@ -92,6 +119,7 @@ function createRace(req, res, next) {
 module.exports = {
   getAllRaces: getAllRaces,
   getRandomRace: getRandomRace,
-  createContest: createContest,
+  getSpecificRace: getSpecificRace,
+  // createContest: createContest,
   createRace: createRace
 };

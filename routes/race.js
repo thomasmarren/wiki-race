@@ -34,8 +34,8 @@ router.get('/article/:topic', function(req, res, next) {
 
 });
 
-router.post('/createContest', db.createContest)
+// router.post('/createContest', db.createContest)
 
-router.post('/completeRace', db.createRace)
+router.post('/completeRace/:start/:finish', db.createRace)
 
 module.exports = router;

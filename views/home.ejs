@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Wiki Race</title>
   </head>
   <body>
     <h1>Welcome to Wiki Race</h1>
@@ -28,7 +28,8 @@
 
     <br> -->
 
-    <table id="races-table">
+    <h2>Recent Races</h2>
+    <table id="results-table">
       <tr>
         <th>Player</th>
         <th>Starting Link</th>
@@ -36,15 +37,30 @@
         <th>Clicks</th>
         <th>Speed</th>
       </tr>
-      <tbody id="races-table-content">
+      <tbody id="results-table-content">
       </tbody>
     </table>
+
+    <!-- <h2>Search Stats for a Race</h2>
+    <form onsubmit="getSpecificRace()">
+      <input type="text" id="specific-start">
+      <input type="text" id="specific-finish">
+      <input type="submit" value="Search">
+    </form>
+    <table id="specific-race-table">
+      <tr id="specific-race-header">
+      </tr>
+      <tbody id="specific-race-table-content">
+      </tbody>
+    </table> -->
+
 
   </body>
   <script type="text/javascript">
     document.getElementById('current-player').innerHTML = sessionStorage.getItem('wiki-race-player')
   </script>
   <script src="javascripts/home/getAllRaces.js"></script>
+  <!-- <script src="javascripts/home/getSpecificRace.js"></script> -->
   <script src="javascripts/home/randomRace.js"></script>
-  <script src="javascripts/home/storeNewRace.js"></script>
+  <script src="javascripts/home/storeRace.js"></script>
 </html>

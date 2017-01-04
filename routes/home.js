@@ -13,4 +13,6 @@ router.get('/races', db.getAllRaces)
 
 router.get('/randomRace', db.getRandomRace)
 
+router.get('/specificRace', db.getSpecificRace)
+
 module.exports = router;

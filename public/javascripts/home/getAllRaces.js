@@ -3,8 +3,10 @@ fetch("http://localhost:3000/home/races")
   return res.json()
 })
 .then(function(res){
-  var table = document.getElementById('races-table-content')
+  var table = document.getElementById('results-table-content')
   table.innerHTML = ""
+
+  var counter = 0
 
   res.data.forEach( race => {
 
@@ -14,10 +16,10 @@ fetch("http://localhost:3000/home/races")
       player.innerHTML = `<p>${race.player}</p>`
 
       var start = row.insertCell()
-      start.innerHTML = `<p>${displayLink(race.start)}</p>`
+      start.innerHTML = `<p id='${race.start}' class='${counter}'>${displayLink(race.start)}</p>`
 
       var finish = row.insertCell()
-      finish.innerHTML = `<p>${displayLink(race.finish)}</p>`
+      finish.innerHTML = `<p id='${race.finish}' class='${counter}'>${displayLink(race.finish)}</p>`
 
       var clicks = row.insertCell()
       clicks.innerHTML = `<p>${race.clicks}</p>`
@@ -25,6 +27,10 @@ fetch("http://localhost:3000/home/races")
       var speed = row.insertCell()
       speed.innerHTML = `<p>${displaySpeed(race.speed)}</p>`
 
+      var button = row.insertCell()
+      button.innerHTML = `<button onclick='storeRecentRace(${counter})'>Race</button>`
+
+      counter += 1
 
   })
 
