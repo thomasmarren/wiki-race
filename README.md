@@ -2,7 +2,7 @@
 
 Wiki Race is an arcade style game where you race between two Wikipedia articles clicking only on the links.
 
-Deployment coming soon!
+A beta version of the app can be found at [this link](https://wiki-race.herokuapp.com/). As of now, all testing has been done in Chrome so it may act up in other browsers.
 
 ##Technologies used
 Node.js  
