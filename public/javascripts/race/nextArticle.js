@@ -14,8 +14,7 @@ function nextArticle(){
 
     var topic = link.split("/").slice(-1)[0]
 
-    // fetch(`http://localhost:3000/race/article/${topic}`)
-    fetch(`https://wiki-race.herokuapp.com/race/article/${topic}`)
+    fetch(`http://localhost:3000/race/article/${topic}`)
     .then( response => {
       return response.json()
     }).then( response => {
@@ -53,8 +52,7 @@ function completeRace(){
     var clicks = raceState.clicks
     var speed = calculateSpeed(raceState.startTime)
 
-    // fetch("http://localhost:3000/race/completeRace",
-    fetch("https://wiki-race.herokuapp.com/race/completeRace",
+    fetch("http://localhost:3000/race/completeRace",
     {
       method: "POST",
       body: JSON.stringify({

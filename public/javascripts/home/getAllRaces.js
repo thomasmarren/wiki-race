@@ -1,5 +1,4 @@
-// fetch("http://localhost:3000/home/races")
-fetch("https://wiki-race.herokuapp.com/home/races")
+fetch("http://localhost:3000/home/races")
 .then(function(res){
   return res.json()
 })
