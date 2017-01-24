@@ -5,7 +5,6 @@ var router = express.Router();
 var request = require('request');
 var db = require('../queries');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('race')
 })
@@ -23,8 +22,8 @@ router.get('/article/:topic', function(req, res, next) {
 
   function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
-      var article = JSON.parse(body);
-      res.json(article);
+      var search = JSON.parse(body);
+      res.json(search)
     }
   }
 
@@ -33,8 +32,6 @@ router.get('/article/:topic', function(req, res, next) {
   // res.json({title: topic, content: "<p>Content</p><a onclick='nextArticle()'>Next article</a>"})
 
 });
-
-// router.post('/createContest', db.createContest)
 
 router.post('/completeRace', db.createRace)
 

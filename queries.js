@@ -48,7 +48,6 @@ function getSpecificRace(req, res, next){
     `SELECT * FROM contests
     WHERE start = '${start}' AND finish = '${finish}'`
   ).then( data => {
-    console.log(data)
     db.any(
       `SELECT * FROM races WHERE race.contest_id = ${data[0].id}`
     ).then(function (data) {
@@ -66,31 +65,42 @@ function getSpecificRace(req, res, next){
       })
 }
 
-// function createContest(req, res, next){
-//
-//   db.any(
-//     `SELECT * FROM contests
-//     WHERE start = '${req.body.start}' AND finish = '${req.body.finish}'`
-//   ).then( data => {
-//     console.log(data)
-//   })
-//
-//   db.none(
-//     'insert into contests (start, finish)' +
-//     'values(${start}, ${finish})',
-//     req.body
-//   ).then(function () {
-//       res.status(200)
-//         .json({
-//           status: 'success',
-//           message: 'Created contest'
-//         });
-//     })
-//     .catch(function (err) {
-//       return next(err);
-//     });
-//
-// }
+function createContest(req, res, next){
+
+  var start = req.body.start
+  var finish = req.body.finish
+
+  var exists
+
+  db.any(
+    `SELECT * FROM contests
+    WHERE start = '${start}' AND finish = '${finish}'`
+  ).then( data => {
+    if(data.length === 0){
+      db.none(
+        'insert into contests (start, finish)' +
+        'values(${start}, ${finish})',
+        req.body
+      ).then(function () {
+          res.status(200)
+            .json({
+              status: 'success',
+              message: 'Created contest',
+              data: data
+            });
+        })
+        .catch(function (err) {
+          return next(err);
+        });
+    } else {
+      res.status(200)
+      .json({
+        status: 'success',
+        message: 'Already exists'
+      });
+    }
+  })
+}
 
 function createRace(req, res, next) {
   req.body.clicks = parseInt(req.body.clicks);
@@ -121,6 +131,6 @@ module.exports = {
   getAllRaces: getAllRaces,
   getRandomRace: getRandomRace,
   getSpecificRace: getSpecificRace,
-  // createContest: createContest,
+  createContest: createContest,
   createRace: createRace
 };

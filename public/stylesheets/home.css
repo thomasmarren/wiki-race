@@ -33,14 +33,6 @@ body {
   outline-width: 0;
 }
 
-table a {
-  text-decoration: none;
-}
-
-table a:hover {
-  text-decoration: underline;
-}
-
 th {
   border-bottom: solid 1px black;
 }
