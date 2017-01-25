@@ -2,20 +2,50 @@
   display: none;
 }
 
-#race-results {
+#article-title {
+  font-size: 2.5em;
+}
+
+#article-separator {
+  margin: 50px auto;
+  width: 95%;
+  border-bottom: 1px solid black;
+}
+
+#race-results-container {
+  margin: 0 auto;
+  width: 50%;
   text-align: center;
+}
+
+#race-results-container h2 {
+  margin: 3px 3px 10px;
+  background: #ddcef2;
+  font-family: inherit;
+  font-size: 120%;
+  font-weight: bold;
+  border: 1px solid #afa3bf;
+  text-align: left;
+  padding: 0.2em 0.4em;
+}
+
+#race-results-container a {
+  margin: 10px 20px;
+}
+
+#results {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #faf5ff;
+  padding: 8px;
+  border: 1px solid #ddcef2;
 }
 
 .links-speed {
   font-size: 1.5em;
   margin: 0px 20px;
   padding: 0px 20px;
-  border: solid 1px black;
   display: inline-block;
-}
-
-#race-results a {
-  margin: 10px 20px;
 }
 
 #links-hit-results {

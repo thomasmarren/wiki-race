@@ -1,31 +1,6 @@
 body {
   text-align: center;
   background-color: #f9f9f9;
-  height: 100%;
-}
-
-#fade-header {
-  height: 50px;
-  background-color: pink;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 99%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 99%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 99%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-}
-
-#container {
-  height: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  width: 80%;
-  background-color: white;
-  border-left: 1px solid #a7d7f9;
-  border-right: 1px solid #a7d7f9;
-  border-bottom: 1px solid #a7d7f9;
 }
 
 #welcome {
@@ -34,10 +9,6 @@ body {
   background-color: #f9f9f9;
   padding: 8px;
   border: 1px solid #dddddd;
-}
-
-#welcome h1 {
-  margin: 8px 0;
 }
 
 #random-race {
@@ -57,15 +28,6 @@ body {
   border: 1px solid #afa3bf;
   text-align: left;
   padding: 0.2em 0.4em;
-}
-
-#random-race a, #search-start, #search-finish {
-  font-size: 1.5em;
-}
-
-#random-race p {
-  margin: 0 2px;
-  font-weight: bold;
 }
 
 #random-links p {
@@ -100,46 +62,7 @@ body {
   padding: 8px;
   border: 1px solid #cef2e0;
   background-color: #f5fffa;
-}
-
-#create-a-race h2 {
-  margin: 3px 3px 10px;
-  background: #cef2e0;
-  font-family: inherit;
-  font-size: 120%;
   font-weight: bold;
-  border: 1px solid #a3bfb1;
-  text-align: left;
-  padding: 0.2em 0.4em;
-}
-
-.next-button {
-  vertical-align: bottom;
-  margin-left: 2px;
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  font-weight: normal;
-  cursor: pointer;
-  color: blue;
-}
-
-.next-button:hover {
-   text-decoration: underline;
-}
-
-.search-result {
-  color: blue;
-  cursor: pointer;
-}
-
-.search-result:hover {
-  text-decoration: underline;
-}
-
-.yes-button {
-  margin-right: 5px;
 }
 
 #recent-races {

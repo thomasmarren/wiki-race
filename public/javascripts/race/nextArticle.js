@@ -15,16 +15,17 @@ function nextArticle(){
     var topic = link.split("/").slice(-1)[0]
 
     fetch(`http://localhost:3000/race/article/${topic}`)
-    .then( response => {
-      return response.json()
-    }).then( response => {
-      var newLink = response.title
+    .then( res => {
+      return res.json()
+    }).then( res => {
+      var newLink = res.title
       raceState.linksHit.push(newLink)
-      var content = response.content.replace(/href/g, "onclick='nextArticle()' href='#' data-id")
+      var content = res.content.replace(/href/g, "onclick='nextArticle()' href='#' data-id")
       var newLinkEl = document.createElement('li')
       newLinkEl.innerHTML = newLink
+      document.getElementById('num-links-hit').innerHTML = raceState.linksHit.length
       document.getElementById('links-hit').appendChild(newLinkEl)
-      document.getElementById('article-title').innerHTML = response.title
+      document.getElementById('article-title').innerHTML = res.title
       document.getElementById('article').innerHTML = content
     })
   }
@@ -71,12 +72,11 @@ function completeRace(){
   function renderRaceResults(){
 
     document.getElementById('race').classList += 'hidden'
-    document.getElementById('race-results').classList -= 'hidden'
+    document.getElementById('race-results-container').classList -= 'hidden'
 
     document.getElementById('from-to-results').innerHTML = raceState.startDisplay + " to " + raceState.finishDisplay
 
     document.getElementById('links-hit-results').innerHTML = '<ul>'
-    document.getElementById('links-hit-results').innerHTML += `<li>${raceState.startDisplay}</li>`
     raceState.linksHit.forEach( link => {
       document.getElementById('links-hit-results').innerHTML += `<li>${link}</li>`
     })
@@ -93,8 +93,11 @@ function completeRace(){
 
   function displaySpeed(startTime){
     var speed = calculateSpeed(startTime)
-    var mins = Math.floor( (speed/1000/60) % 60 );
-    var secs = Math.floor( (speed/1000) % 60 );
+    var mins = Math.floor( (speed/1000/60) % 60 )
+    var secs = Math.floor( (speed/1000) % 60 )
+    if (secs < 10) {
+      secs = "0" + secs
+    }
     return mins + ' : ' + secs
   }
 
