@@ -90,6 +90,37 @@ body {
   font-weight: bold;
 }
 
+#create-a-race h2 {
+  margin: 3px 3px 10px;
+  background: #cef2e0;
+  font-family: inherit;
+  font-size: 120%;
+  font-weight: bold;
+  border: 1px solid #a3bfb1;
+  text-align: left;
+  padding: 0.2em 0.4em;
+}
+
+.next-button {
+  vertical-align: bottom;
+  margin-left: 2px;
+  background:none!important;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  font-weight: normal;
+  cursor: pointer;
+  color: blue;
+}
+
+.next-button:hover {
+   text-decoration: underline;
+}
+
+.yes-button {
+  margin-right: 5px;
+}
+
 #recent-races {
   margin: 0 auto;
   width: 50%;

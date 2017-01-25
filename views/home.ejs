@@ -32,7 +32,33 @@
       </div>
 
       <div id="create-a-race">
-        <a href="/create">Create a Race</a>
+        <h2>Create a Race</h2>
+        <form id="start-form" onsubmit="searchStart()">
+          <label for="">From</label>
+          <input id="input-start" type="text">
+          <input class="next-button" type="submit" value="Next">
+        </form>
+
+        <form id="finish-form" style="display: none;" onsubmit="searchFinish()">
+          <label for="">To</label>
+          <input id="input-finish" type="text">
+          <input class="next-button" type="submit" value="Next">
+        </form>
+
+        <br>
+
+        <div style="display: none;" id="start-suggestion-div">
+          <a id="start-suggestion"></a>
+          <a class="yes-button" href="#" onclick="handleInput('yes','start')" class="yes">Yes</a><a href="#" onclick="handleInput('no','start')" class="no">No</a>
+        </div>
+
+        <div style="display: none;" id="finish-suggestion-div">
+          <a id="finish-suggestion"></a>
+          <a class="yes-button" href="#" onclick="handleInput('yes','finish')" class="yes">Yes</a><a href="#" onclick="handleInput('no','finish')" class="no">No</a>
+        </div>
+
+        <p><span id="search-start">?</span> to <span id="search-finish">?</span></p>
+        <a id="create-race" href="#" style="display: none;" onclick=createContest()>Race!</a>
       </div>
 
       <div id="recent-races">
@@ -71,6 +97,7 @@
     document.getElementById('current-player').innerHTML = sessionStorage.getItem('wiki-race-player')
   </script>
   <script src="javascripts/home/getAllRaces.js"></script>
+  <script src="javascripts/create/createRace.js"></script>
   <!-- <script src="javascripts/home/getSpecificRace.js"></script> -->
   <script src="javascripts/home/randomRace.js"></script>
   <script src="javascripts/home/storeRace.js"></script>
