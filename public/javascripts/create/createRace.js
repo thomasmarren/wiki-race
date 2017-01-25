@@ -24,10 +24,12 @@ function searchStart(){
     } else {
       let searchResult = data.query.searchinfo.suggestion
       document.getElementById("start-suggestion-div").style.display = "block"
-      document.getElementById("start-suggestion").innerHTML = `Did you mean ${searchResult}?`
+
+      document.getElementById("start-suggestion").innerHTML = `Did you mean <span class='search-result' id='start-search-result'>${searchResult}</span>?`
       document.getElementById("start-suggestion").setAttribute('data-id', searchResult)
-      document.getElementById("start-suggestion").onclick = function(){window.open(`https://www.wikipedia.org/wiki/${searchResult}`, 'newwindow', 'width=800, height=450'); return false;}
+      document.getElementById("start-search-result").onclick = function(){window.open(`https://www.wikipedia.org/wiki/${searchResult}`, 'newwindow', 'width=800, height=450'); return false;}
     }
+    document.getElementById("clear-race").style.display = "inline"
   })
 }
 
@@ -53,13 +55,13 @@ function searchFinish(){
     if(data.query.searchinfo.suggestion === undefined){
       let searchResult = data.query.search[0].title
       document.getElementById("search-finish").innerHTML = `${searchResult}`
-      document.getElementById("create-race").style.display = "block"
+      document.getElementById("create-race").style.display = "inline"
     } else {
       let searchResult = data.query.searchinfo.suggestion
       document.getElementById("finish-suggestion-div").style.display = "block"
-      document.getElementById("finish-suggestion").innerHTML = `Did you mean ${searchResult}?`
+      document.getElementById("finish-suggestion").innerHTML = `Did you mean <span class='search-result' id='finish-search-result'>${searchResult}</span>?`
       document.getElementById("finish-suggestion").setAttribute('data-id', searchResult)
-      document.getElementById("finish-suggestion").onclick = function(){window.open(`https://www.wikipedia.org/wiki/${searchResult}`, 'newwindow', 'width=800, height=450'); return false;}
+      document.getElementById("finish-search-result").onclick = function(){window.open(`https://www.wikipedia.org/wiki/${searchResult}`, 'newwindow', 'width=800, height=450'); return false;}
     }
   })
 }
@@ -72,10 +74,23 @@ function handleInput(input,id){
       document.getElementById("start-form").style.display = "none"
       document.getElementById("finish-form").style.display = "block"
     } else {
-      document.getElementById("create-race").style.display = "block"
+      document.getElementById("create-race").style.display = "inline"
     }
   }
   document.getElementById(`${id}-suggestion-div`).style.display = "none"
+}
+
+function clearContest(){
+  document.getElementById("start-form").style.display = "block"
+  document.getElementById("input-start").value = ""
+  document.getElementById("finish-form").style.display = "none"
+  document.getElementById("input-finish").value = ""
+  document.getElementById("clear-race").style.display = "none"
+  document.getElementById("create-race").style.display = "none"
+  document.getElementById("search-start").innerHTML = "?"
+  document.getElementById("search-finish").innerHTML = "?"
+  document.getElementById("start-suggestion-div").style.display = "none"
+  document.getElementById("finish-suggestion-div").style.display = "none"
 }
 
 function createContest(){

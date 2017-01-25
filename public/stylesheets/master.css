@@ -2,6 +2,10 @@ body {
   font-family: sans-serif;
 }
 
+form {
+  autocomplete: off;
+}
+
 a {
   text-decoration: none;
 }
