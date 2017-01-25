@@ -9,53 +9,63 @@
     <title>Wiki Race</title>
   </head>
   <body>
-    <h1>Welcome to Wiki Race</h1>
-    <h1 id="current-player"></h1>
+    <div id="container">
 
-    <div id="random-links">
-      <a id="random-start"></a>
-      <p id="to"></p>
-      <a id="random-finish"></a>
-      <br>
-      <br>
-      <button class="race-button random-race-button" onclick="storeRandomRace()">Race!</button>
-      <button class="race-button random-race-button" onclick="newRandomRace()">Another one</button>
-    </div>
+      <h1>Welcome to Wiki Race</h1>
 
-    <br>
-    <br>
+      <div id="welcome">
+        <h1 id="current-player"></h1>
+        <a href="/">Change initials</a>
+      </div>
 
-    <a href="/create">Create a Race</a>
+      <div id="random-race">
+        <h2>Start a Race</h2>
+        <div id="random-links">
+          <a id="random-start"></a>
+          <p id="to"></p>
+          <a id="random-finish"></a>
+          <br>
+          <br>
+          <button class="race-button random-race-button" onclick="storeRandomRace()">Race!</button>
+          <button class="race-button random-race-button" onclick="newRandomRace()">Another one</button>
+        </div>
+      </div>
 
-    <br>
+      <div id="create-a-race">
+        <a href="/create">Create a Race</a>
+      </div>
 
-    <h2>Recent Races</h2>
-    <table id="results-table">
-      <tr>
-        <th>Player</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Clicks</th>
-        <th>Speed</th>
-      </tr>
-      <tbody id="results-table-content">
-      </tbody>
-    </table>
+      <div id="recent-races">
 
-    <!-- <h2>Search Stats for a Race</h2>
-    <form onsubmit="getSpecificRace()">
+        <h2>Recent Races</h2>
+        <table id="results-table">
+          <tr>
+            <th>Player</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Clicks</th>
+            <th>Speed</th>
+          </tr>
+          <tbody id="results-table-content">
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- <h2>Search Stats for a Race</h2>
+      <form onsubmit="getSpecificRace()">
       <input type="text" id="specific-start">
       <input type="text" id="specific-finish">
       <input type="submit" value="Search">
     </form>
     <table id="specific-race-table">
-      <tr id="specific-race-header">
-      </tr>
-      <tbody id="specific-race-table-content">
-      </tbody>
-    </table> -->
+    <tr id="specific-race-header">
+  </tr>
+  <tbody id="specific-race-table-content">
+</tbody>
+</table> -->
 
-
+</div>
   </body>
   <script type="text/javascript">
     document.getElementById('current-player').innerHTML = sessionStorage.getItem('wiki-race-player')

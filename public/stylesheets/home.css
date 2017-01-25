@@ -1,5 +1,58 @@
 body {
   text-align: center;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  width: 80%;
+  background-color: white;
+  border-left: 1px solid #a7d7f9;
+  border-right: 1px solid #a7d7f9;
+  border-bottom: 1px solid #a7d7f9;
+}
+
+#welcome {
+  margin: 20px auto;
+  width: 50%;
+  background-color: #f9f9f9;
+  padding: 8px;
+  border: 1px solid #dddddd;
+}
+
+#welcome h1 {
+  margin: 8px 0;
+}
+
+#random-race {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #faf5ff;
+  padding: 8px;
+  border: 1px solid #ddcef2;
+}
+
+#random-race h2 {
+  margin: 3px 3px 10px;
+  background: #ddcef2;
+  font-family: inherit;
+  font-size: 120%;
+  font-weight: bold;
+  border: 1px solid #afa3bf;
+  text-align: left;
+  padding: 0.2em 0.4em;
+}
+
+#random-race a {
+  font-size: 1.5em;
+}
+
+#random-race p {
+  margin: 0 2px;
+  font-weight: bold;
 }
 
 #random-links p {
@@ -16,11 +69,6 @@ body {
   cursor: pointer;
 }
 
-#results-table {
-  width: 1000px;
-  margin: 0px auto;
-}
-
 .random-race-button {
   color: blue;
   background: none;
@@ -31,6 +79,40 @@ body {
 
 .random-race-button:focus {
   outline-width: 0;
+}
+
+#create-a-race {
+  margin: 20px auto;
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #cef2e0;
+  background-color: #f5fffa;
+  font-weight: bold;
+}
+
+#recent-races {
+  margin: 0 auto;
+  width: 50%;
+  background-color: #f5faff;
+  padding: 8px;
+  border: 1px solid #cedff2;
+}
+
+#recent-races h2 {
+  margin: 3px 3px 10px;
+  background: #cedff2;
+  font-family: inherit;
+  font-size: 120%;
+  font-weight: bold;
+  border: 1px solid #a3b0bf;
+  text-align: left;
+  color: #000;
+  padding: 0.2em 0.4em;
+}
+
+#results-table {
+  width: 100%;
+  margin: 0px auto;
 }
 
 th {
